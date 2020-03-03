@@ -1,0 +1,48 @@
+<html>
+
+<body>
+    <label for="name">Name:</label>
+    <input type="text" name="name">
+
+    <label for="name">Email:</label>
+    <input type="text" name="Email">
+
+    <label for="Phone">Phone:</label>
+    <input type="text" name="Phone">
+    <button id="button">
+        Send Mail
+    </button>
+
+
+    <div>Get this List</div>
+    <div id="response"></div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#button').click(function () {
+                $.get('http://localhost:3900/hello', function (list) {
+                    $('#response').html(list); // show the list
+                });
+                $.post('http://localhost:3900/sendmail',
+                    {
+                        emailData: {
+                            name: "John",
+                            email: "john@example.com",
+                            phone: 12345
+                        }
+                    },
+                    function (list) {
+                        console.log(list)
+                        $('#response').html(JSON.stringify(list)); // show the list
+                    }).done(function (f) {
+                        $('#response').html(f);
+                        console.log('succ', f)
+                    }).fail((d) => {
+                        console.log('fail', d)
+                    });
+            });
+        });
+    </script>
+</body>
+
+</html>
