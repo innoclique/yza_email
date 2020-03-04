@@ -121,6 +121,10 @@ var UserSchema = new mongoose.Schema({
         default: false
     },
     pwdchangeonfirstlogin:String,
+    isTrail:Boolean,
+    trailDays:String
+    
+
 
     
 }, {

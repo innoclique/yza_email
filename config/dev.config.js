@@ -17,7 +17,9 @@ module.exports = {
         from: "noreply@yovza.com",
         to: "madantfc@gmail.com",
         subject: "Promo Signup Request Submission"
-    }
+    },
+    trailDays:90
+
 
 
 };
