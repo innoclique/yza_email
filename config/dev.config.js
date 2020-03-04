@@ -18,7 +18,8 @@ module.exports = {
         to: "madantfc@gmail.com",
         subject: "Promo Signup Request Submission"
     },
-    trailDays:90
+    trailDays:90,
+    premsubid:"5e0eca4845194c34183dfea6"
 
 
 

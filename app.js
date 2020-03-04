@@ -439,7 +439,8 @@ app.get('/activate', (req, res) => {
                     _user.password = _tempPwd;
                     _user.pwdchangeonfirstlogin = 'NotChanged';
                     _user.isTrail=true;
-                    _user.trailDays=config.trailDays
+                    _user.trailDays=config.trailDays;
+                    _user.subscription_id =config.premsubid;
                     _user.save((e, o) => {
                         if (e) {
                             res.status(404).send('Error Occurred While inserting Data from Freesignup to User table...' + err);
